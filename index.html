@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Vayu Cape SW images and drivers</title>
+  
+
+  <link rel="shortcut icon" href="./img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "None";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Vayu Cape SW images and drivers</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href=".">Home</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#vayu-cape-sw-images-and-drivers">Vayu Cape SW images and drivers</a></li>
+                
+                    <li><a class="toctree-l4" href="#ready-to-use-downloadable-debian-wheezy-image">Ready to use downloadable Debian Wheezy image</a></li>
+                
+                    <li><a class="toctree-l4" href="#basic-steps-for-using-3g-gsmwcdma-modem">Basic steps for Using 3G (GSM/WCDMA) Modem</a></li>
+                
+                    <li><a class="toctree-l4" href="#basic-steps-for-using-pps">Basic Steps for Using PPS</a></li>
+                
+                    <li><a class="toctree-l4" href="#compiling-the-sd-card-image-from-scratch">Compiling the SD card image from scratch</a></li>
+                
+                    <li><a class="toctree-l4" href="#modifying-your-existing-kernel-or-other-distribution">Modifying your existing kernel or other distribution</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Vayu Cape SW images and drivers</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="vayu-cape-sw-images-and-drivers">Vayu Cape SW images and drivers</h1>
+<p>Vayu capes are fully supported for Debian Wheezy ARMHF (Official Page). The kernel tree is based on Robert C Nelson git tree and all the commits are based on the latest kernel. Kindly follow his wiki for detailed steps on how to compile the kernel from scratch. BBB-RobertCNelson-Main Wiki.</p>
+<p>We have compiled a bootable microSD card image for easy plug and play demonstration of the Vayu 2G and 3G capes. Additionally we have outlined detailed step by step compilation of this image based on BBB-RobertCNelson-Main Wiki. If you are using distribution other than debian, the kernel patches are listed, kindly recompile your kernel based on directed patches, enable PPS support (if your capes have GPS timing module) and you should be ready to go.</p>
+<p>We know in world of Linux, things get a bit complicated, we have FAQ's which may help you to unblock, kindly follow these. </p>
+<h2 id="ready-to-use-downloadable-debian-wheezy-image">Ready to use downloadable Debian Wheezy image</h2>
+<ul>
+<li>To get started quickly, download and extract image file from the links given below and flash to a 4GB SD CARD.</li>
+<li>This prebuilt SD card image (4GB size) or EMMC flasher image already has all the required drivers and extra functions and packages to be used by the Cape.</li>
+</ul>
+<p><span style="color:black;font-size:1.5em;">Download Files:</span></p>
+<ul>
+<li>Download these files from the dropbox:</li>
+</ul>
+<p><strong>MicroSD card Image</strong> 
+ <a href="https://www.dropbox.com/s/fo61fldqha5pjl1/VAYU_Debian_bone70_061215.img.xz?dl=0">VAYU_Debian_bone70_061215.img.xz file</a></p>
+<p><strong>eMMC Flasher Image</strong> 
+ <a href="https://www.dropbox.com/s/t03kd8egc4pwqyy/Vayu_emmc_flasher_4GB_3.8.13bone32.img.xz">Vayu_emmc_flasher_4GB_3.8.13bone32.img.xz</a></p>
+<p><strong>Overlay</strong> 
+ <a href="https://www.dropbox.com/s/hlm31vvhrc30rfj/BBB_VAYU-00A0.dtbo">BBB_VAYU-00A0.dtbo file</a>
+ (if using another image, place in /lib/firmware)</p>
+<p><strong>Overlay</strong> 
+ <a href="https://www.dropbox.com/s/1i4u6k05odx5cg4/BBB_VAYU.dts">BBB_VAYU.dts file</a>
+ (for reference only)</p>
+<p>'Note:' The dts source file is here for reference only in case you wish to compile the overlay yourself with the dtc compiler.</p>
+<ul>
+<li>Extract the image file from the above xz file and then flash it to a 4GB(atleast) sd card. Follow steps mentioned here for flashing and using the images.</li>
+<li>
+<p>For linux :</p>
+<pre><code>unxz VAYU_Debian_bone70_061215.img.xz
+sudo dd if=./VAYU_Debian_bone70_061215.img of=/dev/sdX
+</code></pre>
+</li>
+<li>
+<p>Beaglebone Black will boot by default from MicroSD card flashed with MicroSD card Image , if present in its slot at bootup. With this option, the microSD card is essential and the eMMC is left untouched.</p>
+</li>
+<li>
+<p>Beaglebone Black will also boot by default from MicroSD card flashed with eMMC Flasher Image but it will then Flash the eMMC, a process that takes around 15 minutes. After flashing is complete, all the 4 LEDs will glow. You can then power off the board, remove microSD card and power up Beaglebone Black again. Now it will boot up from eMMC with our prebuilt image. With this option, a microSD card is no longer needed.</p>
+</li>
+<li>
+<p>For more detailed instructions, follow this link 
+<a href="http://elinux.org/Beagleboard:Updating_The_Software">Updating the Software</a></p>
+</li>
+<li>
+<p><strong>The precompiled image file has:</strong></p>
+</li>
+<li>PPS GPIO support using the dtbo file for initializing the device tree overlay.</li>
+<li>PPS drivers, required by NTP server.</li>
+<li>USB drivers , required by 3G(UMTS/CDMA) modem.</li>
+<li>NTP server preconfigured ( if using GPS module) with servers set for Asia/India</li>
+<li>PPPd/Wvdial tool to establish 2G and 3G connection (only Service provider data has to be updated) with sample provider files. We have included AT&amp;T and T-Mobile wvdial conf sample files for US users.</li>
+<li>Helpful scripts for operating GPIOs (under /root/bin for activating/reading pins directly) and applying overlays and pin settings at bootup (as /root/boot_run.sh ).</li>
+</ul>
+<h2 id="basic-steps-for-using-3g-gsmwcdma-modem">Basic steps for Using 3G (GSM/WCDMA) Modem</h2>
+<ul>
+<li>Attach cape to beaglebone black and boot up .</li>
+<li>Keep USB cable unattached initially from the Beaglebone Black host port.</li>
+<li>Place a data-enabled GSM mini-SIM in the SIM card slot. In case of CDMA, the RUIM can be placed in the same SIM card slot.</li>
+<li>In the pre-built image, all the required pin initialization and device tree overlays are applied by commands in the crontab after bootup(of user root).</li>
+<li>
+<p>After bootup is complete, login to Beaglebone Black.</p>
+</li>
+<li>
+<p>After logging in, turn on the modem by one of these options:</p>
+</li>
+<li><strong>Using Pre-built Image</strong></li>
+<li>
+<p>Pressing switch S1 for 4 seconds and releasing, or</p>
+</li>
+<li>
+<p>Issue the commands:</p>
+<pre><code>echo "high" &gt; /sys/class/gpio/gpio45/direction
+sleep 4
+echo "low" &gt; /sys/class/gpio/gpio45/direction
+sleep 4
+echo "high" &gt; /sys/class/gpio/gpio45/direction
+</code></pre>
+</li>
+<li>
+<p><strong>Using Another Image</strong> (without prebuilt USB drivers for GSM/WCDMA modem)</p>
+<pre><code>cd /sys/class/gpio/
+echo 45 &gt; export
+cd gpio45
+echo "high" &gt; direction
+sleep 4
+echo "low" &gt; direction
+sleep 4
+echo "high" &gt; direction
+</code></pre>
+</li>
+<li>
+<p>After some time, LED D4 should turn on and glow continuously which indicates modem has turned on. This LED, NETLIGHT LED is a new feature and is functional in latest versions of the cape. Earlier, LED D4 remained off all the time.</p>
+</li>
+<li>
+<p><strong>Now, attach usb cable between mini USB port (#16) of cape and host port of Beaglebone Black.</strong>Alternatively, if the USB host port on cape is also populated,then the USB cable can be kept intact before Board was booted up.</p>
+</li>
+<li>
+<p>Check that modem is visible on the USB bus by:</p>
+<pre><code>lsusb
+
+Bus 001 Device 002: ID 0424:2412 Standard Microsystems Corp.
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 007: ID 21f5:2012
+</code></pre>
+</li>
+<li>
+<p>You can also check that ports have been assigned for the modem by :</p>
+</li>
+</ul>
+<p><strong>Using Pre-built Image</strong></p>
+<pre><code>    ls /dev/ttyUSB*
+
+    /dev/ttyUSB0  /dev/ttyUSB1  /dev/ttyUSB2
+</code></pre>
+<p><strong>Using Another Image</strong></p>
+<pre><code>    modprobe usbserial vendor=0x21f5 product=0x2012
+    lsusb
+
+    Bus 001 Device 002: ID 0424:2412 Standard Microsystems Corp.
+    Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+    Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+    Bus 001 Device 007: ID 21f5:2012
+</code></pre>
+<ul>
+<li>
+<p>System messages show what happened after applying modprobe usbserial </p>
+<pre><code>dmesg | grep -i usb
+
+usb 1-1.1: New USB device found, idVendor=21f5, idProduct=2012
+usb 1-1.1: New USB device strings: Mfr=3, Product=2, SerialNumber=4
+usb 1-1.1: Product: StrongRising Technologies
+usb 1-1.1: Manufacturer: Modem
+usb 1-1.1: SerialNumber: 000000000002
+usb 1-1.1: usb_probe_device
+usb 1-1.1: configuration #1 chosen from 1 choice
+usb 1-1.1: adding 1-1.1:1.0 (config #1, interface 0)
+usbserial_generic 1-1.1:1.0: usb_probe_interface
+usbserial_generic 1-1.1:1.0: usb_probe_interface - got id
+usbserial_generic 1-1.1:1.0: The "generic" usb-serial driver is only for testing and one-off prototypes.
+usbserial_generic 1-1.1:1.0: Tell linux-usb@vger.kernel.org to add your device to a proper driver.
+usbserial_generic 1-1.1:1.0: generic converter detected
+usb 1-1.1: generic converter now attached to ttyUSB0
+usb 1-1.1: adding 1-1.1:1.1 (config #1, interface 1)
+usbserial_generic 1-1.1:1.1: usb_probe_interface
+usbserial_generic 1-1.1:1.1: usb_probe_interface - got id
+usbserial_generic 1-1.1:1.1: The "generic" usb-serial driver is only for testing and one-off prototypes.
+usbserial_generic 1-1.1:1.1: Tell linux-usb@vger.kernel.org to add your device to a proper driver.
+usbserial_generic 1-1.1:1.1: generic converter detected
+usb 1-1.1: generic converter now attached to ttyUSB1
+usb 1-1.1: adding 1-1.1:1.2 (config #1, interface 2)
+usbserial_generic 1-1.1:1.2: usb_probe_interface
+usbserial_generic 1-1.1:1.2: usb_probe_interface - got id
+usbserial_generic 1-1.1:1.2: The "generic" usb-serial driver is only for testing and one-off prototypes.
+usbserial_generic 1-1.1:1.2: Tell linux-usb@vger.kernel.org to add your device to a proper driver.
+usbserial_generic 1-1.1:1.2: generic converter detected
+usb 1-1.1: generic converter now attached to ttyUSB2
+</code></pre>
+</li>
+<li>
+<p><strong>It is recommended to add a proper driver for the modem in kernel. The generic driver is not reliable.</strong></p>
+</li>
+<li>
+<p>The modem is now ready for use with pon/poff(PPPd), Wvdial or any other dialer program.</p>
+</li>
+<li>
+<p>Basic Steps for Using GPS</p>
+</li>
+</ul>
+<p><strong>Using pre-built image.</strong></p>
+<ul>
+<li>
+<p>In the pre-built image, the GPS device is enabled (in crontab under root) by default at bootup on the /dev/ttyO4 port. To quickly test the GPS, issue the following commands:</p>
+<pre><code>stty -F /dev/ttyO4 raw 19200
+cat /dev/ttyO4
+</code></pre>
+</li>
+<li>
+<p>This should produce the text NMEA messages as received from the GPS device.</p>
+<pre><code>$GPRMC,140615.00,A,2834.25835,N,07720.54109,E,0.033,53.14,240214,0.00,E,D,V*70
+$GPVTG,53.14,T,0.00,M,0.033,N,0.061,K,D*12
+$GPGGA,140615.00,2834.25835,N,07720.54109,E,1,11,0.80,199.5,M,-36.0,M,,*70
+$GPGSA,A,3,07,08,28,09,19,03,27,10,23,13,11,,1.81,0.80,1.62,1*1A
+$GPGSV,4,1,15,13,72,176,32,07,53,346,48,19,52,080,38,03,40,052,39,1*69
+$GPGSV,4,2,15,23,37,159,33,28,31,255,42,08,29,313,45,27,25,046,37,1*65
+$GPGSV,4,3,15,09,23,312,43,11,22,135,28,10,17,260,33,16,08,049,10,1*65
+$GPGSV,4,4,15,01,03,150,22,05,00,312,,40,,,38,1*6C
+$GPGLL,2834.25835,N,07720.54109,E,140615.00,A,D*64
+$GPZDA,140615.00,24,02,2014,-00,00*4F
+</code></pre>
+</li>
+</ul>
+<p><strong>Using another image.</strong></p>
+<ul>
+<li>
+<p>To ensure that the GPS device is enabled, check the reset signal,GPIO 50. It should always be high and in output mode.</p>
+<pre><code>cd /sys/class/gpio/
+echo 50 &gt; export
+cd gpio50
+echo "high" &gt; direction
+</code></pre>
+</li>
+<li>
+<p>Since the GPS device is attached to the generic /dev/ttyO4 serial port(UART4) on Beaglebone black, it is possible to access it without any special drivers. So we need to enable the device tree overlay for /dev/ttyO4 (uart4) on beaglebone black:</p>
+<pre><code>cd /lib/firmware
+echo BB-UART4 &gt; /sys/devices/bone_capemgr.9/slots
+stty -F /dev/ttyO4 raw 19200
+cat /dev/ttyO4
+</code></pre>
+</li>
+<li>
+<p>For more details, see Configuring for GPS Location and Time Synchronization.</p>
+</li>
+</ul>
+<h2 id="basic-steps-for-using-pps">Basic Steps for Using PPS</h2>
+<ul>
+<li>
+<p>For PPS support, it is essential to have PPS drivers enabled in the kernel. For this reason, it is advisable to use the pre-built kernel image or use another image verified to have PPS support built in already. Once this is done, the following steps can be executed:</p>
+</li>
+<li>
+<p>Enable PPS pin as interrupt (already done if booting with pre-built image):</p>
+<pre><code>cd /lib/firmware
+echo BBB_VAYU &gt; /sys/devices/bone_capemgr.9/slots
+</code></pre>
+</li>
+<li>
+<p>Verify pps signal is activated in the kernel</p>
+<pre><code>/usr/src/pps-tools/ppstest /dev/pps1
+</code></pre>
+</li>
+<li>
+<p>For more details, see 
+<a href="https://amanyantrr.github.io/testmkdocs8/">Configuring for GPS Location and Time Synchronization.</a></p>
+</li>
+</ul>
+<h2 id="compiling-the-sd-card-image-from-scratch">Compiling the SD card image from scratch</h2>
+<p>This section describes how to compile the Debian image from scratch to enable</p>
+<ul>
+<li>PPS drivers, required by NTP server</li>
+<li>USB drivers , required by 3G(UMTS/CDMA) modem</li>
+<li>Custom wvdial conf file to enable connections</li>
+<li>Device tree overlays to enable PPS GPIO support</li>
+<li>Helpful scripts</li>
+</ul>
+<p>Kindly follow this page for the detailed outlined steps - 
+<a href="http://www.yantrr.com/wiki/Compiling_Yantrr_Vayu_Drivers_on_Debian_Wheezy">Compiling Yantrr Vayu Drivers on Debian Wheezy</a></p>
+<h2 id="modifying-your-existing-kernel-or-other-distribution">Modifying your existing kernel or other distribution</h2>
+<p>If you are having your own branch of kernel and following some other linux distribution like Ubuntu, Angstrom, you can use following wiki to recompile the kernel to support Vayu capes. We dont officially support it, but hopefully would make it easier.</p>
+<p><code>Note :</code></p>
+<ul>
+<li>
+<p><strong>Vayu 2G cape -</strong> These are fully supported in all linux distribution with device tree and overlay support, you just need the Vayu cape overlay to configure UART's</p>
+</li>
+<li>
+<p><strong>Vayu 2G + GPS capes - </strong>These need PPS support for GPIO in kernel, you may need to rebuilt your kernel to enable these, the details are outlined here from make menuconfig.</p>
+</li>
+<li>
+<p><strong>Vayu 3G &amp; 3G + GPS capes -</strong> These may need USB driver support in addition to GPS PPS support. </p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.15.3
+Build Date UTC : 2016-07-22 16:22:09.795560
+-->
